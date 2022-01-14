@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preload" href="css/app.css" as="style">
+    <link rel="stylesheet" href="css/app.css">    
     <link rel="icon" href="/build/img/favicon.ico" type="image/x-icon">   
     <title>Calculadora de CUIL</title>
 </head>
-<body class="calcular">
-    
+<body class="calcular">    
     <header>
-        <h1>Calculadora de <span>CUIL</span></h1>
+        <h1 class="titulo">Calculadora de <span>CUIL</span></h1>
     </header>
-    
-    <nav class="navegacion-principal contenedor">
-        <a href="index.html">Inicio</a>
-        <a href="calcular.html">Calcular</a>
-        <a href="#">Acerca de</a>
-        <a href="#">Contacto</a>
-    </nav>
 
-    <main>
+    <div class="nav-bg">
+        <nav class="navegacion contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="calcular.html">Calcular</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
+
+    <main class="principal">
         <form id="formulario" action="">
             <div class="campos">
                 <label for="sexo">Seleccione el Sexo:</label>
@@ -40,12 +44,12 @@
             </div>
         </form>
     </main>
-    <section id="resultado">        
+    <section class="principal" id="resultado">        
     </section>    
 
-    <footer>
-        <p>Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
-    </footer>    
+    <footer class="footer">
+        <p class="copyright">Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
+    </footer>
     <script src="js/app.js"></script>
 </body>
 </html>
