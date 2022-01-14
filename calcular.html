@@ -22,8 +22,26 @@
     </nav>
 
     <main>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-    </main>    
+        <form id="formulario" action="">
+            <div class="campos">
+                <label for="sexo">Seleccione el Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="" disabled selected>-- Seleccione --</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+            </div>
+            <div class="campos">
+                <label for="dni">Escriba el DNI</label>
+                <input type="number" placeholder="Tu DNI" id="dni" name="dni" required>
+            </div>
+            <div class="campos">
+                <input id="calcular" type="button" value="Calcular">
+            </div>
+        </form>
+    </main>
+    <section id="resultado">        
+    </section>    
 
     <footer>
         <p>Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
