@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preload" href="css/app.css" as="style">
+    <link rel="stylesheet" href="css/app.css">    
     <link rel="icon" href="/build/img/favicon.ico" type="image/x-icon">   
     <title>Calculadora de CUIL</title>
 </head>
-<body>
-    
+<body class="index">    
     <header>
-        <h1>Calculadora de <span>CUIL</span></h1>
+        <h1 class="titulo">Calculadora de <span>CUIL</span></h1>
     </header>
     
-    <nav class="navegacion-principal contenedor">
-        <a href="index.html">Inicio</a>
-        <a href="calcular.html">Calcular</a>
-        <a href="#">Acerca de</a>
-        <a href="#">Contacto</a>
-    </nav>
+    <div class="nav-bg">
+        <nav class="navegacion contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="calcular.html">Calcular</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Contacto</a>
+        </nav>
 
-    <main>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-    </main>    
+    </div>
+        <main class="principal">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>            
+        </main>
+    </div>
 
-    <footer>
-        <p>Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
-    </footer>    
+    <footer class="footer">
+        <p class="copyright">Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
+    </footer>
+
     <script src="js/app.js"></script>
 </body>
 </html>
