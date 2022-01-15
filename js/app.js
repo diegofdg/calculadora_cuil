@@ -6,25 +6,15 @@ let cuilString = '';
 let tipo = '';
 let sexo = '';
 let dni = '';
-let resultadoCuil = '';
 
-if(document.querySelector('.index')){
-    console.log('Estoy en index');    
-
-} else if(document.querySelector('.calcular')) {
-    console.log('Estoy en calcular');    
-    iniciarApp();
-}
-
-function iniciarApp() {
-    const btnCalcular = document.getElementById('calcular');
-    
-    btnCalcular.addEventListener('click', ()=> {
-        calcularCuil();
-    });
-}
+const resultadoCuil = document.getElementById('resultado');
+const inputSexo = document.getElementById('sexo');
+const inputDni = document.getElementById('dni');
+const btnCalcular = document.getElementById('calcular');
+btnCalcular.addEventListener('click', calcularCuil);
 
 function calcularCuil() {
+    limpiarHTML();
     const validacionSexo = validarSexo();
 
     if(validacionSexo) {        
@@ -69,7 +59,7 @@ function calcularCuil() {
 function validarSexo() {
     alertas = '';
 
-    if(document.getElementById('sexo').value === '') {        
+    if(inputSexo.value === '') {        
         alertas = 'El sexo es obligatorio';
         return false;
     }
@@ -80,7 +70,7 @@ function validarSexo() {
 function validarDNI() {
     alertas = '';
 
-    dni = document.getElementById('dni').value;
+    dni = inputDni.value;
 
     if(dni.length < 7 | dni.length > 8) {
         alertas = 'El DNI ingresado no es válido';        
@@ -101,6 +91,7 @@ function mostrarAlertas(mensaje) {
     const existeError = document.querySelector('.error');
 
     if(!existeError) {
+        const formulario = document.getElementById('formulario');
         const divMensaje = document.createElement('div');
         divMensaje.classList.add('error');
 
@@ -114,8 +105,6 @@ function mostrarAlertas(mensaje) {
 }
 
 function obtenerTipo() {
-    const inputSexo = document.getElementById('sexo');
-
     if(inputSexo.value === 'masculino') {
         tipo = '20';
         sexo = "Masculino";
@@ -143,33 +132,44 @@ function obtenerDigitoVerificador() {
     return digito;   
 }
 
-function imprimirResultado(cuil) {
-    resultadoCuil = document.getElementById('resultado');
+function imprimirResultado(cuil) {    
     limpiarHTML();
     limpiarCampos();
-    const section = document.createElement('DIV');
+
+    const divResultado = document.createElement('DIV');
+    divResultado.classList.add('campos','resultado');
     
     const datosIngresados = document.createElement('P');      
     datosIngresados.textContent = `Datos ingresados:`;
-    section.appendChild(datosIngresados);
+    datosIngresados.classList.add('subtitulo');
+    divResultado.appendChild(datosIngresados);
 
     const sexoIngresado = document.createElement('LI');      
-    sexoIngresado.textContent = `Sexo: ${sexo}`;
-    section.appendChild(sexoIngresado);
+    sexoIngresado.innerHTML = `Sexo: <span>${sexo}</span>`;
+    divResultado.appendChild(sexoIngresado);
 
     const dniIngresado = document.createElement('LI');      
-    dniIngresado.textContent = `DNI: ${dni}`;
-    section.appendChild(dniIngresado);
+    dniIngresado.innerHTML = `DNI: <span>${dni}</span>`;
+    divResultado.appendChild(dniIngresado);
 
     const resultadoTexto = document.createElement('P');      
     resultadoTexto.textContent = `Resultado:`;
-    section.appendChild(resultadoTexto);
+    resultadoTexto.classList.add('subtitulo');
+    divResultado.appendChild(resultadoTexto);
+
+    const resultadoCalculoGuiones = document.createElement('P');    
+    const cuilConGuiones = agregarGuiones(cuil, "-");
+
+    resultadoCalculoGuiones.innerHTML = `CUIL con guiones: <span>${cuilConGuiones}</span>`;
+    resultadoCalculoGuiones.classList.add('tu-cuil');
+    divResultado.appendChild(resultadoCalculoGuiones);
 
     const resultadoCalculo = document.createElement('P');      
-    resultadoCalculo.textContent = `Tu CUIL es: ${cuil}`;
-    section.appendChild(resultadoCalculo);
+    resultadoCalculo.innerHTML = `CUIL sin guiones: <span>${cuil}</span>`;
+    resultadoCalculo.classList.add('tu-cuil');
+    divResultado.appendChild(resultadoCalculo);    
 
-    resultadoCuil.appendChild(section);
+    resultadoCuil.appendChild(divResultado);
 }
 
 function limpiarHTML() {
@@ -178,10 +178,22 @@ function limpiarHTML() {
     }
 }
 
-function limpiarCampos() {
-    const inputSexo = document.getElementById('sexo');
+function limpiarCampos() {    
     inputSexo.selectedIndex = '';
-
-    const inputDni = document.getElementById('dni');
     inputDni.value = '';
 }
+
+function agregarGuiones (cadena, caracter) {
+    let cadenaConCaracteres = "";    
+    for (let i = 0; i < 11; i++) {
+        if (i === 2) {
+            cadenaConCaracteres += cadena.substring(0, i) + caracter;
+        } else if (i === 10){
+            cadenaConCaracteres += cadena.substring(2, i) + caracter + cadena.substring(11, i);
+        }          
+    }
+    return cadenaConCaracteres;
+}
+
+/* let clave = "20269777729";
+console.log(agregarCaracter(clave, "-", 2)); */

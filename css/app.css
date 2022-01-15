@@ -1,10 +1,27 @@
 :root {
     --blanco: #FFFFFF;
-    --oscuro: #212121;
-    --primario: #00626d;
-    --secundario: #0097a7;
+    --negro: #212121;
     --gris: #757575;
     --grisClaro: #DFE9F3;
+    
+    --color01: #253242;
+    --color02: #2E486B;
+    --color03: #00626d;
+    --color04: #0097a7;
+    --color05: #1178B2;
+    --color06: #638EFF;
+    --color07: #60AABB;
+    --color08: #5FC1CA;
+    --color09: #ABCBFA;
+    --color10: #84D5C6;
+    --color11: #B5DAC1;
+    --color12: #E7FAF4;
+    --color13: #851452;
+    --color14: #EE5543;
+    --color15: #F88DA7;
+    --color16: #EBA0A0;
+    --color17: #E58E63;
+    --color18: #fdd070;    
 }
 
 html {
@@ -30,12 +47,17 @@ h1 {
 
 .titulo span {
     font-weight: bold;
-    color: var(--secundario);
+    color: var(--color04);
 }
 
-.principal span {
-    font-size: 2.4rem;
+p span {
+    font-size: 2rem;
     font-weight: bold;
+    color: var(--color13);
+}
+
+li span {    
+    font-weight: bold;    
 }
 
 .contenedor {    
@@ -43,7 +65,8 @@ h1 {
 }
 
 .nav-bg {
-    background-color: var(--secundario);    
+    background-color: var(--color02);    
+    margin: 0 1rem;
 }
 
 .navegacion {    
@@ -68,17 +91,57 @@ h1 {
 }
 
 .navegacion a:hover {
-    background-color: var(--primario);    
+    background-color: var(--color05);    
 }
 
-.principal {
-    margin: 1rem;
-}
-    
 p.copyright {    
     text-align: center;
 }
 
-.campos {
-    margin-top: 1rem;
+.campos {  
+    margin: 1rem;
+}
+
+.error {
+    background-color: #b7322c;
+    padding: 1rem;
+    margin: 1rem;
+    color: white;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: bold;    
+}
+
+.formulario {
+    margin: 1rem;
+}
+
+.subtitulo {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.resultado {    
+    margin: 1rem;
+    padding: 0 2rem;
+    border: 1px solid black;
+    background-color: var(--color09);
+}
+
+.tu-cuil {
+    margin-top: 0;
+}
+
+.formulario {
+    background-color: var(--color18);
+    border: 1px solid black;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    padding-top: 1.5rem;
+    padding-left: 1rem;
 }

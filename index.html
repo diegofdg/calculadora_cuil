@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
     <link rel="icon" href="/build/img/favicon.ico" type="image/x-icon">   
     <title>Calculadora de CUIL</title>
 </head>
-<body class="index">    
+<body>    
     <header>
         <h1 class="titulo">Calculadora de <span>CUIL</span></h1>
     </header>
@@ -19,19 +19,51 @@
     <div class="nav-bg">
         <nav class="navegacion contenedor">
             <a href="index.html">Inicio</a>
-            <a href="calcular.html">Calcular</a>
+            <a href="#calcularCuil">Calcular</a>
             <a href="#">Acerca de</a>
             <a href="#">Contacto</a>
         </nav>
+    </div>
 
-    </div>
-        <main class="principal">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>            
-        </main>
-    </div>
+    <main class="seccion">
+        <div id="resultado">            
+        </div>
+
+        <div id="calcularCuil" class="formulario">
+            <fieldset>
+                <legend class="subtitulo">Calcula tu CUIL aquí</legend>
+                <form id="formulario">
+                    <div class="campos">
+                        <label for="sexo">Seleccione el Sexo:</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="" disabled selected>-- Seleccione --</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="campos">
+                        <label for="dni">Escriba el DNI</label>
+                        <input type="number" placeholder="Tu DNI" id="dni" name="dni" required>
+                    </div>
+                    <div class="campos">
+                        <input id="calcular" type="button" value="Calcular">
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </main>
+    
+    <section class="seccion">
+        <h1>Titulo de la sección</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>            
+    </section>    
+
+    
+
+    
 
     <footer class="footer">
         <p class="copyright">Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
