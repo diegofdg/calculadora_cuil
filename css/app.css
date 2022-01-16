@@ -1,6 +1,6 @@
 :root {
     --blanco: #FFFFFF;
-    --negro: #212121;
+    --negro: #000000;
     --gris: #757575;
     --grisClaro: #DFE9F3;
     
@@ -17,16 +17,22 @@
     --color11: #B5DAC1;
     --color12: #E7FAF4;
     --color13: #851452;
-    --color14: #EE5543;
+    --color14bis: #EE5543;
+    --color14: #bb3324;
     --color15: #F88DA7;
     --color16: #EBA0A0;
-    --color17: #E58E63;
-    --color18: #fdd070;    
+    --color17: #f1b46d;
+    --color18: #fdd070;   
+
+    --fuente: 'Krub', sans-serif;
 }
+
+/*** Globales ***/
 
 html {
     font-size: 62.5%;
-    box-sizing: border-box;    
+    box-sizing: border-box;   
+     
 }
 
 *, *:before, *:after {
@@ -34,6 +40,7 @@ html {
 }
 
 body {
+    font-family: var(--fuente);
     font-size: 1.6rem;
     background: #DFE9F3;
     background: linear-gradient(to right, var(--grisClaro) 0%, var(--blanco) 100%);       
@@ -42,27 +49,50 @@ body {
 h1 {
     font-size: 3.8rem;
     font-weight: normal;
-    text-align: center;
+    text-align: center;    
 }
 
-.titulo span {
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    color: var(--color02);
+}
+
+h3 {
+    font-size: 2.4rem;
+    color: var(--color02);    
+}
+
+.margin-1 {
+    margin: 1rem;
+}
+
+.margin-0-auto {
+    margin: 0 auto;    
+}
+
+.padding-1 {
+    padding: 1rem; 
+}
+
+.padding-bottom-1 {
+    padding-bottom: 1rem;
+}
+
+.border-radius {
+    border-radius: .5rem;
+}
+
+/*** Header ***/
+
+h1>span {
     font-weight: bold;
     color: var(--color04);
 }
 
-p span {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--color13);
-}
-
-li span {    
-    font-weight: bold;    
-}
-
-.contenedor {    
-    margin: 0 auto;    
-}
+/*** Navegación ***/
 
 .nav-bg {
     background-color: var(--color02);    
@@ -72,76 +102,161 @@ li span {
 .navegacion {    
     display: flex;
     flex-direction: column;
+    padding-left: 1.2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
     .navegacion {
         flex-direction: row;
     }
 }
 
 .navegacion a {
-    display: block;
-    text-align: center;
+    display: block;    
     color: var(--blanco);
     text-decoration: none;   
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     font-weight: bold;
-    padding: 1rem; 
+    padding: 1rem 2rem 1rem 1rem;    
 }
 
 .navegacion a:hover {
     background-color: var(--color05);    
 }
 
-p.copyright {    
-    text-align: center;
-}
-
-.campos {  
-    margin: 1rem;
-}
-
-.error {
-    background-color: #b7322c;
-    padding: 1rem;
-    margin: 1rem;
-    color: white;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    font-weight: bold;    
-}
-
-.formulario {
-    margin: 1rem;
-}
-
-.subtitulo {
-    font-weight: bold;
-    font-size: 1.6rem;
-}
-
-.resultado {    
-    margin: 1rem;
-    padding: 0 2rem;
-    border: 1px solid black;
-    background-color: var(--color09);
-}
-
-.tu-cuil {
-    margin-top: 0;
-}
+/*** Formulario ***/
 
 .formulario {
     background-color: var(--color18);
-    border: 1px solid black;
 }
 
 fieldset {
     border: none;
+    padding-left: 1rem;
 }
 
-legend {
+.subtitulo {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: var(--color14);    
     padding-top: 1.5rem;
     padding-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;    
+    padding: .5rem;   
+    margin-bottom: 1rem; 
+}
+
+.boton {
+    background-color: var(--color14);
+    color: var(--blanco);
+    padding: 1rem 3rem;    
+    font-size: 2rem;
+    font-weight: bold;    
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;    
+    border: none;    
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .input-text,
+    .boton {
+        width: 50%; 
+    }   
+}
+
+@media (min-width: 768px) {
+    .input-text,
+    .boton {
+        width: 25%;
+    }    
+}
+
+.contenido {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.error {
+    background-color: #b7322c;    
+    padding: 1rem 3rem;    
+    font-size: 2rem;    
+    margin: 1rem;
+    color: white;    
+    text-transform: uppercase;
+    font-weight: bold;    
+}
+
+/*** Resultado ***/
+
+.resultado {
+    padding: 0 1rem;    
+    background-color: var(--color10);     
+}
+
+.resultado p {
+    padding-left: 1rem;
+    font-weight: bold;
+}
+
+p span {
+    font-size: 2rem;
+    font-weight: bold;    
+    color: var(--color02);    
+}
+
+li span {    
+    font-weight: bold;    
+}
+
+.texto {
+    margin-top: 0;   
+    margin-bottom: 1rem;     
+}
+
+/*** FAQ ***/
+
+.faq {
+    background-color: var(--color11);
+    text-align: center;    
+}
+
+.aboutme {
+    background-color: var(--color11);
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    .faq,
+    .aboutme {
+        text-align: start;
+    }    
+}
+
+/*** Footer ***/
+
+.footer {
+    background-color: var(--color01);
+    color: var(--blanco);        
+}
+
+p.copyright {    
+    text-align: center;    
+    font-size: 1.8rem;    
 }

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="preload" href="css/app.css" as="style">
     <link rel="stylesheet" href="css/app.css">    
     <link rel="icon" href="/build/img/favicon.ico" type="image/x-icon">   
@@ -13,60 +18,76 @@
 </head>
 <body>    
     <header>
-        <h1 class="titulo">Calculadora de <span>CUIL</span></h1>
+        <h1>Calculadora de <span>CUIL</span></h1>
     </header>
     
-    <div class="nav-bg">
-        <nav class="navegacion contenedor">
-            <a href="index.html">Inicio</a>
-            <a href="#calcularCuil">Calcular</a>
-            <a href="#">Acerca de</a>
-            <a href="#">Contacto</a>
+    <div class="nav-bg border-radius">
+        <nav class="navegacion">
+            <a href="#calcularcuil">Calcular</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="#aboutme">Sobre Mí</a>            
         </nav>
     </div>
 
-    <main class="seccion">
+    <main>        
         <div id="resultado">            
-        </div>
+        </div>       
 
-        <div id="calcularCuil" class="formulario">
+        <div id="calcularcuil" class="formulario margin-1 border-radius">
             <fieldset>
                 <legend class="subtitulo">Calcula tu CUIL aquí</legend>
                 <form id="formulario">
-                    <div class="campos">
+                    <div class="contenido">
                         <label for="sexo">Seleccione el Sexo:</label>
-                        <select id="sexo" name="sexo" required>
+                        <select id="sexo" name="sexo" class="input-text border-radius" required>
                             <option value="" disabled selected>-- Seleccione --</option>
                             <option value="masculino">Masculino</option>
                             <option value="femenino">Femenino</option>
                         </select>
                     </div>
-                    <div class="campos">
-                        <label for="dni">Escriba el DNI</label>
-                        <input type="number" placeholder="Tu DNI" id="dni" name="dni" required>
+                    <div class="contenido">
+                        <label for="dni">Escriba el DNI (sin puntos ni espacios):</label>
+                        <input type="number" placeholder="Tu DNI" id="dni" name="dni" class="input-text border-radius" required>
                     </div>
-                    <div class="campos">
-                        <input id="calcular" type="button" value="Calcular">
+                    <div class="contenido">
+                        <input id="calcular" type="button" class="boton border-radius" value="Calcular">
                     </div>
                 </form>
             </fieldset>
         </div>
     </main>
     
-    <section class="seccion">
-        <h1>Titulo de la sección</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem alias in magnam earum deserunt. Tempore, nostrum provident consequuntur qui ipsam saepe fugit dolore enim vel officia dicta culpa iste odio!</p>            
-    </section>    
-
+    <section id="faq" class="faq margin-1 border-radius padding-1">
+        <div class="contenido ">
+            <h2>Preguntas Frecuentes</h2>        
+            <h3>Qué es CUIL?</h3>
+            <p>El Código Único de Identificación Laboral (CUIL) es el número que se otorga a cada trabajador al inicio de su actividad laboral en relación de dependencia, que pertenezca al Sistema Integrado de Jubilaciones y Pensiones (SIJP), y a cada persona que gestione alguna prestación o servicio de la Seguridad Social en la República Argentina.</p>
+            <h3>Cómo está compuesto el CUIL?</h3>
+            <p>Es una clave compuesta por el número de Documento Nacional de Identidad (DNI) con un prefijo de dos dígitos y un dígito posfijo como dígito verificador. Primero se escriben los dos dígitos del prefijo seguido de un guion, luego el número de DNI con ocho dígitos (a completar con ceros a la izquierda si es necesario) seguido de otro guion, y por último el dígito verificador. Se expresa, por ejemplo: "20-08490848-8" donde "08490848" es el DNI de la persona, "20" el prefijo y "8" el dígito verificador.</p>
+            <h3>Dónde se tramita el CUIL?</h3>
+            <p>En Argentina, el trámite para obtener el CUIL se realiza ante la Administración Nacional de la Seguridad Social (ANSeS).</p>
+            <h3>Para qué sirve el CUIL?</h3>
+            <p>El CUIL es utilizado principalmente por los organismos estatales para identificar fehacientemente a una única persona y poder controlar sus aportes previsionales. Asimismo, este código es utilizado para realizar diversos trámites tanto en organismos públicos como en empresas.</p>
+            <h3>CUIL es lo mismo que CUIT?</h3>
+            <p>No. El CUIL es un código con el que ANSES identifica a los trabajadores en relación de dependencia; y el CUIT (Es el Código Único de Identificación Tributaria) es una clave con que la Administración Federal de Ingresos Públicos (AFIP) identifica a empresas, comercios y trabajadores autónomos.</p>
+            <p class="margin-botom-0">Fuente:
+                <a href="https://es.wikipedia.org/wiki/C%C3%B3digo_%C3%9Anico_de_Identificaci%C3%B3n_Laboral" target="_blank">Wikipedia</a>
+            </p>   
+        </div>                 
+    </section>
     
+    <section id="aboutme" class="aboutme margin-1 border-radius padding-1">
+        <div class="contenido">
+            <h2>Sobre mí</h2>
+            <p>Mi nombre es Diego Fabián Di Giorgio, tengo 43 años y soy Contador Público.</p>
+            <p>Nací en la ciudad de Santa Fé, provincia de Santa Fe, aunque desde que tengo 6 años me encuentro viviendo en la ciudad de Paraná, provincia de Entre Ríos.</p>
+            <p>Siempre fui un apasionado del mundo de la informática, pero recién desde mediados del año 2020 empecé a enfocarme de manera profesional en el mundo de la programación.</p>
+            <p>Actualmente estoy haciendo el curso de "Desarrollador Full Stack Catamarca 2021" en el Instituto Superior Politécnico de Córdoba.</p>
+        </div>
+    </section>
 
-    
-
-    <footer class="footer">
-        <p class="copyright">Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
+    <footer class="footer margin-1 border-radius padding-1">
+        <p class="copyright margin-0-auto">Todos los Derechos Reservados 2022 &copy; - DDG Freelancer</p>
     </footer>
 
     <script src="js/app.js"></script>

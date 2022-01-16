@@ -1,5 +1,3 @@
-console.log('aplicación iniciada');
-
 let sumaTotal = 0;
 let alertas = '';
 let cuilString = '';
@@ -7,7 +5,7 @@ let tipo = '';
 let sexo = '';
 let dni = '';
 
-const resultadoCuil = document.getElementById('resultado');
+const divResultado = document.getElementById('resultado');
 const inputSexo = document.getElementById('sexo');
 const inputDni = document.getElementById('dni');
 const btnCalcular = document.getElementById('calcular');
@@ -93,7 +91,7 @@ function mostrarAlertas(mensaje) {
     if(!existeError) {
         const formulario = document.getElementById('formulario');
         const divMensaje = document.createElement('div');
-        divMensaje.classList.add('error');
+        divMensaje.classList.add('error', 'border-radius');
 
         divMensaje.textContent = mensaje;            
         formulario.appendChild(divMensaje);
@@ -136,45 +134,47 @@ function imprimirResultado(cuil) {
     limpiarHTML();
     limpiarCampos();
 
-    const divResultado = document.createElement('DIV');
-    divResultado.classList.add('campos','resultado');
+    const nuevoDiv = document.createElement('DIV');
+    nuevoDiv.classList.add('campos','resultado', 'border-radius','margin-1');
     
     const datosIngresados = document.createElement('P');      
     datosIngresados.textContent = `Datos ingresados:`;
     datosIngresados.classList.add('subtitulo');
-    divResultado.appendChild(datosIngresados);
+    nuevoDiv.appendChild(datosIngresados);
 
-    const sexoIngresado = document.createElement('LI');      
+    const sexoIngresado = document.createElement('P');      
     sexoIngresado.innerHTML = `Sexo: <span>${sexo}</span>`;
-    divResultado.appendChild(sexoIngresado);
+    sexoIngresado.classList.add('texto');
+    nuevoDiv.appendChild(sexoIngresado);
 
-    const dniIngresado = document.createElement('LI');      
+    const dniIngresado = document.createElement('P');      
     dniIngresado.innerHTML = `DNI: <span>${dni}</span>`;
-    divResultado.appendChild(dniIngresado);
+    dniIngresado.classList.add('texto');
+    nuevoDiv.appendChild(dniIngresado);
 
     const resultadoTexto = document.createElement('P');      
     resultadoTexto.textContent = `Resultado:`;
     resultadoTexto.classList.add('subtitulo');
-    divResultado.appendChild(resultadoTexto);
+    nuevoDiv.appendChild(resultadoTexto);
 
     const resultadoCalculoGuiones = document.createElement('P');    
     const cuilConGuiones = agregarGuiones(cuil, "-");
 
     resultadoCalculoGuiones.innerHTML = `CUIL con guiones: <span>${cuilConGuiones}</span>`;
-    resultadoCalculoGuiones.classList.add('tu-cuil');
-    divResultado.appendChild(resultadoCalculoGuiones);
+    resultadoCalculoGuiones.classList.add('texto');
+    nuevoDiv.appendChild(resultadoCalculoGuiones);
 
     const resultadoCalculo = document.createElement('P');      
     resultadoCalculo.innerHTML = `CUIL sin guiones: <span>${cuil}</span>`;
-    resultadoCalculo.classList.add('tu-cuil');
-    divResultado.appendChild(resultadoCalculo);    
+    resultadoCalculo.classList.add('texto', 'padding-bottom-1');
+    nuevoDiv.appendChild(resultadoCalculo);    
 
-    resultadoCuil.appendChild(divResultado);
+    divResultado.appendChild(nuevoDiv);
 }
 
 function limpiarHTML() {
-    while(resultadoCuil.firstChild){
-        resultadoCuil.removeChild(resultadoCuil.firstChild);
+    while(divResultado.firstChild){
+        divResultado.removeChild(divResultado.firstChild);
     }
 }
 
@@ -194,6 +194,3 @@ function agregarGuiones (cadena, caracter) {
     }
     return cadenaConCaracteres;
 }
-
-/* let clave = "20269777729";
-console.log(agregarCaracter(clave, "-", 2)); */
