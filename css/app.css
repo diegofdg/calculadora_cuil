@@ -260,3 +260,13 @@ p.copyright {
     text-align: center;    
     font-size: 1.8rem;    
 }
+
+.footer .corazon {  
+    color: red;
+    font-weight: bold;
+}
+  
+.footer span {  
+    font-weight: bold;
+    color: var(--blanco);        
+}
