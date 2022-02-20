@@ -102,7 +102,7 @@ h1>span {
 .navegacion {    
     display: flex;
     flex-direction: column;
-    padding-left: 1.2rem;
+    /* padding-left: 1.2rem; */
     align-items: center;
 }
 
@@ -122,7 +122,17 @@ h1>span {
 }
 
 .navegacion a:hover {
-    background-color: var(--color05);    
+    background-color: var(--color05);   
+    border-radius: .5rem;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    .navegacion a:hover {
+        width: fit-content;
+        text-align: left;        
+    }
 }
 
 /*** Formulario ***/
