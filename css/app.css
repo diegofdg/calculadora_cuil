@@ -276,7 +276,7 @@ li span {
 
 p.copyright {    
     text-align: center;    
-    font-size: 1.8rem;    
+    font-size: 1.4rem;    
 }
 
 .footer .corazon {  
@@ -286,5 +286,6 @@ p.copyright {
   
 .footer span {  
     font-weight: bold;
-    color: var(--blanco);        
+    color: var(--blanco);  
+    font-size: 1.4rem;      
 }
